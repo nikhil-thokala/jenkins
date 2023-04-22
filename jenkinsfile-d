@@ -21,6 +21,7 @@ pipeline {
 
     stages {
         stage("one"){
+
             steps{
                 echo "one"
             }
@@ -28,6 +29,10 @@ pipeline {
 
 
         stage("two"){
+        input {
+                        message "Should we continue?"
+                        ok "Yes, we should."
+                    }
             steps{
                 echo "two"
                 sh "env"
